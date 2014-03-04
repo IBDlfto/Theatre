@@ -1,11 +1,11 @@
 <%-- 
     Document   : index
-    Created on : 14 avr. 2013, 02:17:49
+    Created on : 3 mars. 2014, 02:17:49
     Author     : TOURE
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<c:redirect url="public/" />
+<c:redirect url="public/index" />
 <!DOCTYPE html>
 <html>
     <head>
