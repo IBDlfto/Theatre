@@ -1,7 +1,7 @@
 package com.theatre.servlets;
 
 /*
- * @(#)ProgrammeServlet.java	1.0 2007/10/31
+ * @(#)Programme.java	1.0 2007/10/31
  * 
  * Copyright (c) 2007 Sara Bouchenak.
  */
@@ -18,7 +18,7 @@ import java.io.IOException;
  * @author <a href="mailto:Sara.Bouchenak@imag.fr">Sara Bouchenak</a>
  * @version 1.0, 31/10/2007
  */
-public class ProgrammeServlet extends HttpServlet {
+public class Programme extends HttpServlet {
 
     /**
      * HTTP GET request entry point.

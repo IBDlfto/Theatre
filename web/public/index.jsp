@@ -20,23 +20,37 @@
 
             <div class="clear"></div>
 
-            <div class="products">
-                    <article class="grid_3 article" id="">
-                        <img class="sale" src="../images/new.png" alt="New">
-                        <div class="prev">
-                            <a href="details?id="><img src="../uploads/" alt="Product 1" title=""></a>
-                        </div><!-- .prev -->
-
-                        <h3 class="title"></h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+            <div class="spectacles">
+                <article class="grid_3 fold" id="">
+                    <img src="../images/test1.jpg" />
+                    <span class="menu">
+                        <span class="info icone"></span>
+                        <span class="add icone"></span>
+                    </span>
+                    <span class="titre">
+                        <h2>Titre de la representation</h2>
+                    </span>
+                </article>
                 <div class="clear"></div>
+                <article class="grid_3 fold" id="">
+                    <img src="../images/test2.jpg" />
+                </article>
+                <div class="clear"></div>
+                <article class="grid_3 fold" id="">
+                    <img src="../images/theatre-1.jpg" />
+                </article>
+                <div class="clear"></div>
+                <article class="grid_3 fold" id="">
+                    <img src="../images/test2.jpg" />
+                </article>
+                <div class="clear"></div>
+                <article class="grid_3 fold" id="">
+                    <img src="../images/test2.jpg" />
+                </article>
+                <div class="clear"></div>
+                <article class="grid_3 fold" id="">
+                    <img src="../images/test2.jpg" />
+                </article>
             </div><!-- .products -->
             <div class="clear"></div>
         </div><!-- #content -->

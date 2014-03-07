@@ -1,0 +1,83 @@
+/* 
+    Document   : form
+    Created on : 4 mars 2014, 20:07:49
+    Author     : TOURE
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.formLabel {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin: 5px;
+    text-align: right;
+    color: #000;
+}
+input[type="text"], input[type="password"], input[type="email"], textarea {
+    font-family: "Century Gothic";
+    width: 200px;
+    margin: 5px 0;
+    padding: 3px 5px;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #CCC;
+}
+select {
+    font-family: "Century Gothic";
+    margin: 2px;
+    padding: 3px 5px;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #CCC;
+}
+textarea {
+    max-width: 350px;
+    min-width: 350px;
+    height: 100px;
+}
+.fond input[type="text"] {
+    width: 350px;
+}
+input:required, textarea:required {
+    background: #ffffff url("../images/asterisk.png") 99% center no-repeat;
+}
+input:required:hover {
+    border-color: rgba(82, 168, 246, 0.75);
+    box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+}
+input:required:focus:valid, textarea:required:focus:valid, .correct {
+    background-image: none;
+    border-color: #56c93f;
+    box-shadow: 0 0 8px #56c93f;
+}
+input:required:focus, textarea:required:focus {
+    background-image: none;
+}
+input:required:focus:invalid, textarea:required:focus:invalid, .incorrect {
+    border-color: #d45252;
+    box-shadow: 0 0 5px #d45252;
+    background-color: rgb(252, 230, 230);
+}
+.incorrect {
+    border-color: #d45252 !important;
+    box-shadow: 0 0 5px #d45252 !important;
+    background-color: rgb(252, 230, 230) !important;
+}
+input:required:valid, textarea:required:valid {
+    background-image: none;
+    background-color: rgb(231, 252, 225);
+}
+.datepicker {
+    width: 75px !important;
+}
+.condition {
+    margin: 10px 0 10px 200px;
+    font-size: small;
+}
+#prix {
+    content: 'lol';
+    text-align: right;
+    width: 150px;
+    padding-right: 15px; 
+}

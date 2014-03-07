@@ -13,27 +13,35 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     <servlet>
-        <servlet-name>NouvelleRepresentationServlet</servlet-name>
-        <servlet-class>com.theatre.servlets.NouvelleRepresentationServlet</servlet-class>
+        <servlet-name>nouvelleRepresentation</servlet-name>
+        <servlet-class>com.theatre.servlets.NouvelleRepresentation</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ProgrammeServlet</servlet-name>
-        <servlet-class>com.theatre.servlets.ProgrammeServlet</servlet-class>
+        <servlet-name>Programme</servlet-name>
+        <servlet-class>com.theatre.servlets.Programme</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>NouvelleRepresentationServlet</servlet-name>
-        <url-pattern>/NouvelleRepresentationServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ProgrammeServlet</servlet-name>
-        <url-pattern>/ProgrammeServlet</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>PublicServlet</servlet-name>
+        <servlet-class>com.theatre.servlets.Public</servlet-class>
+    </servlet>
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>
             <include-prelude>/common/taglibs.jsp</include-prelude>
         </jsp-property-group>
     </jsp-config>
+    <servlet-mapping>
+        <servlet-name>nouvelleRepresentation</servlet-name>
+        <url-pattern>/nouvelleRepresentation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Programme</servlet-name>
+        <url-pattern>/public/programme</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PublicServlet</servlet-name>
+        <url-pattern>/public/index</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
