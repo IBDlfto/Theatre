@@ -25,7 +25,7 @@
                     <img src="../images/test1.jpg" />
                     <span class="menu">
                         <span class="info icone"></span>
-                        <span class="add icone"></span>
+                        <span class="addCart icone"></span>
                     </span>
                     <span class="titre">
                         <h2>Titre de la representation</h2>

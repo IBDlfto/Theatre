@@ -38,6 +38,7 @@ body {
     margin: 0;
     padding: 0 14px;
     position: relative;
+    z-index: 1000;
 }
 #top nav ul li.current a{
     background: #414141!important;
@@ -70,6 +71,14 @@ hgroup{
     border-bottom: 1px solid #aaa;
     height: 86px;
     margin: 0;
+    #cart {
+        position: fixed;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background: black;
+        top: 130px;
+    }
 }
 .welcome{
     color: #777;
@@ -237,16 +246,22 @@ section {
                 height: 45px;
                 width: 45px;
                 background: #555;
+                cursor: pointer;
                 @include border-radius(50%);
                 @include box-shadow(0 0 1px rgba(0,0,0,0.5));
                 &:before {
                     font-size: 26px;
-                    margin: 6px -5px;
                     position: absolute;
                 }
             }
             .info:before {
                 content: '\e2e0';
+                margin: 6px -5px;
+                color: #fff;
+            }
+            .addCart:before {
+                content: '\e0c0';
+                margin: 6px -12px;
                 color: #fff;
             }
         }
@@ -284,7 +299,7 @@ section {
         .bot {
             bottom: 0; top: 50%;
             @include transform-origin(50%,0);
-            @include rotateX(65deg, 700px);
+            @include rotateX(0, 700px);
             @include single-transition(all, 1s, cubic-bezier(0.075, 0.45, 0.155, 1));
             img {
                 margin-top: -$height/2;

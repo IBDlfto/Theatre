@@ -39,6 +39,7 @@
                     <input type="text" name="q" class="search_form" placeholder="Trouver une une presentation ...">
                     <input type="submit" class="search_button" value="">
                 </form>
+                <div id="cart"></div>
             </div>
             <nav class="primary">
                 <ul>
