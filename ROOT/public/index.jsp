@@ -28,7 +28,7 @@
                         <span class="addCart icone"></span>
                     </span>
                     <span class="titre">
-                        <h2>Titre de la representation</h2>
+                        <h2>Titre du spectacle</h2>
                     </span>
                 </article>
                 <div class="clear"></div>

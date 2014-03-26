@@ -9,6 +9,9 @@ package com.theatre.servlets;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  * Proramme Servlet.
@@ -32,6 +35,29 @@ public class Programme extends HttpServlet {
      * @throws IOException	if an input or output error is detected when the
      * servlet handles the GET request
      */
+    
+    public static Connection bddConnect() {
+        Connection connexion = null;
+        try {
+            /* Chargement du driver JDBC pour MySQL */
+            Class.forName("oracle.jdbc.OracleDriver");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Classe");
+        }
+        /* Connexion à la base de données */
+        String url = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:ufrima";
+        String utilisateur = "toureab";
+        String motDePasse = "bd2013";
+        try {
+            System.out.println("OK");
+            connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
+            System.out.println("NON");
+        } catch (SQLException e) {
+            System.out.println("Connexion" + e.getMessage());
+        }
+        return connexion;
+    }
+    
     public void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         ServletOutputStream out = res.getOutputStream();
