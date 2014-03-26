@@ -2,7 +2,7 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <filter>
         <filter-name>CharsetFilter</filter-name>
-        <filter-class>com.theatre.filters.CharsetFilter</filter-class>
+        <filter-class>web.theatre.filters.CharsetFilter</filter-class>
         <init-param>
             <param-name>requestEncoding</param-name>
             <param-value>UTF-8</param-value>
@@ -14,15 +14,15 @@
     </filter-mapping>
     <servlet>
         <servlet-name>nouvelleRepresentation</servlet-name>
-        <servlet-class>com.theatre.servlets.NouvelleRepresentation</servlet-class>
+        <servlet-class>web.theatre.servlets.NouvelleRepresentation</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Programme</servlet-name>
-        <servlet-class>com.theatre.servlets.Programme</servlet-class>
+        <servlet-class>web.theatre.servlets.Programme</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PublicServlet</servlet-name>
-        <servlet-class>com.theatre.servlets.Public</servlet-class>
+        <servlet-class>web.theatre.servlets.Public</servlet-class>
     </servlet>
     <jsp-config>
         <jsp-property-group>

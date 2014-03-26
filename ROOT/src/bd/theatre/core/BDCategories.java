@@ -1,4 +1,4 @@
-package accesBD;
+package bd.theatre.core;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,11 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
-import exceptions.CategorieException;
-import exceptions.ExceptionConnexion;
+import bd.theatre.exceptions.CategorieException;
+import bd.theatre.exceptions.ExceptionConnexion;
 
-import modele.Categorie;
-import modele.Utilisateur;
+import bd.theatre.beans.Categorie;
+import bd.theatre.beans.Utilisateur;
 
 public class BDCategories {
 
@@ -24,13 +24,13 @@ public class BDCategories {
 	 * @throws CategorieException
 	 * @throws ExceptionConnexion
 	 */
-	public static Vector<Categorie> getCategorie (Utilisateur user)
+	public static Vector<Categorie> getCategorie ()
 	throws CategorieException, ExceptionConnexion {
 		Vector<Categorie> res = new Vector<Categorie>();
 		String requete ;
 		Statement stmt ;
 		ResultSet rs ;
-		Connection conn = BDConnexion.getConnexion(user.getLogin(), user.getmdp());
+		Connection conn = BDConnexion.getConnexion();
 		
 		requete = "select nomc, prix from LesCategories order by nomc";
 		try {

@@ -1,4 +1,4 @@
-package com.theatre.servlets;
+package web.theatre.servlets;
 
 /*
  * @(#)Programme.java	1.0 2007/10/31

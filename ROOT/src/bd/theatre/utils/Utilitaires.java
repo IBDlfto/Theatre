@@ -1,4 +1,4 @@
-package utils;
+package bd.theatre.utils;
 
 import java.util.Properties;
 import java.io.FileInputStream;
@@ -10,14 +10,14 @@ import java.awt.Frame;
 
 import jus.util.IO;
 
-import accesBD.BDCategories;
-import accesBD.BDConnexion;
+import bd.theatre.core.BDCategories;
+import bd.theatre.core.BDConnexion;
 
-import modele.Utilisateur;
-import modele.Categorie;
-import exceptions.ExceptionUtilisateur;
-import exceptions.ExceptionConnexion;
-import exceptions.CategorieException;
+import bd.theatre.beans.Utilisateur;
+import bd.theatre.beans.Categorie;
+import bd.theatre.exceptions.ExceptionUtilisateur;
+import bd.theatre.exceptions.ExceptionConnexion;
+import bd.theatre.exceptions.CategorieException;
 
 /**
  * les operations de l'application
@@ -43,7 +43,7 @@ public class Utilitaires {
 		try {
 			IO.afficherln("===================");
 			IO.afficherln("Listes des categories tarifaires");
-			res = BDCategories.getCategorie(user);
+			res = BDCategories.getCategorie();
 			if (res.isEmpty()) {
 				IO.afficherln(" Liste vide ");
 			} else {
@@ -77,7 +77,7 @@ public class Utilitaires {
 		// lecture des parametres de connexion dans connection.conf
 		Properties p = new Properties();
 		InputStream is = null;
-		is = new FileInputStream(utils.Constantes.Config);
+		is = new FileInputStream(bd.theatre.utils.Constantes.Config);
 		p.load(is);
 		login = p.getProperty("user");
 		passwd = p.getProperty("mdp");
@@ -89,7 +89,7 @@ public class Utilitaires {
 			passwd = login_dialog.getPwd();
 		}
 		/* test de la connexion */
-		Connection conn = BDConnexion.getConnexion(login, passwd);
+		Connection conn = BDConnexion.getConnexion();
 		if (conn != null) {
 			IO.afficherln("Connexion reussie...");
 			BDConnexion.FermerTout(conn, null, null);

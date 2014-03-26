@@ -1,4 +1,4 @@
-package exceptions;
+package bd.theatre.exceptions;
 
 import java.sql.SQLException;
 

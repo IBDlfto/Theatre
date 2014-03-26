@@ -1,4 +1,4 @@
-package utils;
+package bd.theatre.utils;
 
 import java.awt.Dimension;
 import java.awt.Frame;

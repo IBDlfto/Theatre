@@ -1,4 +1,4 @@
-package modele;
+package bd.theatre.beans;
 
 /**
  * 

@@ -1,4 +1,4 @@
-package com.theatre.filters;
+package web.theatre.filters;
 
 /*
  * To change this template, choose Tools | Templates

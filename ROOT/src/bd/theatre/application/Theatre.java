@@ -1,18 +1,18 @@
-package application;
+package bd.theatre.application;
 
 import java.sql.Connection;
 import java.util.Vector;
 
-import utils.Constantes;
-import utils.Utilitaires;
+import bd.theatre.utils.Constantes;
+import bd.theatre.utils.Utilitaires;
 
 
 
 import jus.util.IO;
-import modele.Utilisateur;
-import modele.Categorie;
+import bd.theatre.beans.Utilisateur;
+import bd.theatre.beans.Categorie;
 
-import exceptions.ExceptionTheatre;
+import bd.theatre.exceptions.ExceptionTheatre;
 
 /**
  * Point d'entree de l'application

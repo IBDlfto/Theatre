@@ -1,4 +1,4 @@
-package utils;
+package bd.theatre.utils;
 
 /**
  * Rassemble les constantes de l'application
@@ -11,6 +11,6 @@ public class Constantes {
 	
 	public static final String Invite = "Votre choix" ;
 	
-	public static final String Config = "connection.conf";
+	public static final String Config = "ROOT/connection.conf";
 	
 }
