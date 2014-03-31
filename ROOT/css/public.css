@@ -367,6 +367,7 @@ section {
 /* line 273, ../scss/public.scss */
 .spectacles .fold .titre h2 {
   display: inline-block;
+  min-width: 150px;
   margin: auto;
   padding: 5px 10px;
   background: #444;
@@ -378,7 +379,7 @@ section {
   -o-border-radius: 30px;
   border-radius: 30px;
 }
-/* line 283, ../scss/public.scss */
+/* line 284, ../scss/public.scss */
 .spectacles .fold div {
   position: absolute;
   top: 0;
@@ -386,7 +387,7 @@ section {
   bottom: 50%;
   overflow: hidden;
 }
-/* line 288, ../scss/public.scss */
+/* line 289, ../scss/public.scss */
 .spectacles .fold .top .shadow {
   position: absolute;
   top: 0;
@@ -403,7 +404,7 @@ section {
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
 }
-/* line 294, ../scss/public.scss */
+/* line 295, ../scss/public.scss */
 .spectacles .fold .top img {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
@@ -412,7 +413,7 @@ section {
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
 }
-/* line 297, ../scss/public.scss */
+/* line 298, ../scss/public.scss */
 .spectacles .fold .bot img {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -421,7 +422,7 @@ section {
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/* line 300, ../scss/public.scss */
+/* line 301, ../scss/public.scss */
 .spectacles .fold .bot {
   bottom: 0;
   top: 50%;
@@ -440,11 +441,11 @@ section {
   -o-transition: all 1s cubic-bezier(0.075, 0.45, 0.155, 1);
   transition: all 1s cubic-bezier(0.075, 0.45, 0.155, 1);
 }
-/* line 305, ../scss/public.scss */
+/* line 306, ../scss/public.scss */
 .spectacles .fold .bot img {
   margin-top: -105px;
 }
-/* line 308, ../scss/public.scss */
+/* line 309, ../scss/public.scss */
 .spectacles .fold .bot .shadow {
   position: absolute;
   top: 0;
@@ -463,12 +464,12 @@ section {
   -o-transition: all 1s cubic-bezier(0.075, 0.45, 0.155, 1);
   transition: all 1s cubic-bezier(0.075, 0.45, 0.155, 1);
 }
-/* line 316, ../scss/public.scss */
+/* line 317, ../scss/public.scss */
 .spectacles .fold img {
   height: 210px;
   width: 290px;
 }
-/* line 320, ../scss/public.scss */
+/* line 321, ../scss/public.scss */
 .spectacles .fold:hover .bot {
   -webkit-transform: perspective(700px) rotateX(65deg);
   -moz-transform: perspective(700px) rotateX(65deg);
@@ -476,14 +477,14 @@ section {
   -o-transform: perspective(700px) rotateX(65deg);
   transform: perspective(700px) rotateX(65deg);
 }
-/* line 322, ../scss/public.scss */
+/* line 323, ../scss/public.scss */
 .spectacles .fold:hover .bot .shadow {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
 /* Slider */
-/* line 329, ../scss/public.scss */
+/* line 330, ../scss/public.scss */
 #slider {
   background: url("../images/salle_theatre.jpg") 20%;
   display: block;
@@ -494,24 +495,24 @@ section {
   margin: auto;
 }
 
-/* line 339, ../scss/public.scss */
+/* line 340, ../scss/public.scss */
 #content {
   display: inline-block;
   width: inherit;
 }
 
-/* line 340, ../scss/public.scss */
+/* line 341, ../scss/public.scss */
 #content .grid_12 {
   width: 100%;
 }
 
-/* line 341, ../scss/public.scss */
+/* line 342, ../scss/public.scss */
 input {
   outline: none;
 }
 
 /* Form */
-/* line 344, ../scss/public.scss */
+/* line 345, ../scss/public.scss */
 .registration {
   font: 14px "Century Gothic";
   background: #FFF;
@@ -523,7 +524,7 @@ input {
   width: 1100px;
 }
 
-/* line 354, ../scss/public.scss */
+/* line 355, ../scss/public.scss */
 .registed {
   display: inline-block;
   vertical-align: top;
@@ -536,7 +537,7 @@ input {
   padding: 20px;
 }
 
-/* line 365, ../scss/public.scss */
+/* line 366, ../scss/public.scss */
 .captcha {
   display: inline-block;
   text-align: center;
@@ -546,12 +547,12 @@ input {
 /*****************************************************************************
   Footer
 *******************************************************************************/
-/* line 373, ../scss/public.scss */
+/* line 374, ../scss/public.scss */
 footer ul {
   padding: 0;
 }
 
-/* line 376, ../scss/public.scss */
+/* line 377, ../scss/public.scss */
 .footer_navigation {
   background: url(../images/bg_header.png) repeat center top;
   border-top: 1px solid #c5c5c5;
@@ -560,12 +561,12 @@ footer ul {
   padding: 60px 0 0 0;
 }
 
-/* line 383, ../scss/public.scss */
+/* line 384, ../scss/public.scss */
 .footer_navigation .grid_3 {
   height: 178px;
 }
 
-/* line 386, ../scss/public.scss */
+/* line 387, ../scss/public.scss */
 .footer_navigation h3 {
   border-bottom: 1px solid #c5c5c5;
   font: normal 18px/18px 'PT Sans', Arial, Verdana, sans-serif;
@@ -574,7 +575,7 @@ footer ul {
   text-transform: uppercase;
 }
 
-/* line 393, ../scss/public.scss */
+/* line 394, ../scss/public.scss */
 ul.f_contact li {
   background: url(../images/li_adr.png) no-repeat 3px 50%;
   color: #707070;
@@ -585,34 +586,34 @@ ul.f_contact li {
   padding: 0 0 0 25px;
 }
 
-/* line 403, ../scss/public.scss */
+/* line 404, ../scss/public.scss */
 ul.f_contact li + li {
   background: url(../images/li_phone.png) no-repeat 0px 50%;
 }
 
-/* line 406, ../scss/public.scss */
+/* line 407, ../scss/public.scss */
 ul.f_contact li + li + li {
   background: url(../images/li_let.png) no-repeat 0px 50%;
 }
 
-/* line 410, ../scss/public.scss */
+/* line 411, ../scss/public.scss */
 .footer_navigation nav.f_menu ul {
   list-style: none;
 }
 
-/* line 413, ../scss/public.scss */
+/* line 414, ../scss/public.scss */
 .footer_navigation nav.f_menu ul a {
   color: #707070;
   font: 13px/24px 'PT Sans', Arial, Verdana, sans-serif;
 }
 
-/* line 417, ../scss/public.scss */
+/* line 418, ../scss/public.scss */
 .footer_navigation nav.f_menu ul a:hover {
   color: #444;
   text-decoration: underline;
 }
 
-/* line 421, ../scss/public.scss */
+/* line 422, ../scss/public.scss */
 .footer_navigation .payments-socials {
   display: inline-block;
   background: #fff;
@@ -622,31 +623,31 @@ ul.f_contact li + li + li {
   padding: 0 12px;
 }
 
-/* line 429, ../scss/public.scss */
+/* line 430, ../scss/public.scss */
 .footer_navigation .payments {
   float: left;
   padding: 22px 0 0 24px;
 }
 
-/* line 433, ../scss/public.scss */
+/* line 434, ../scss/public.scss */
 .footer_info {
   background: url(../images/bg_line.png) repeat center top;
   height: 70px;
 }
 
-/* line 437, ../scss/public.scss */
+/* line 438, ../scss/public.scss */
 .footer_info p.copyright {
   color: #999;
   font: 12px/70px 'PT Sans', Arial, Verdana, sans-serif;
   margin: 0;
 }
 
-/* line 442, ../scss/public.scss */
+/* line 443, ../scss/public.scss */
 .soc {
   margin: 19px 0 0 0;
 }
 
-/* line 445, ../scss/public.scss */
+/* line 446, ../scss/public.scss */
 .soc a {
   background-image: url(../images/bg_soc.png);
   background-repeat: no-repeat;
@@ -664,22 +665,22 @@ ul.f_contact li + li + li {
   transition: 0.5s;
 }
 
-/* line 458, ../scss/public.scss */
+/* line 459, ../scss/public.scss */
 .soc a.facebook {
   background-position: 0 0;
 }
 
-/* line 461, ../scss/public.scss */
+/* line 462, ../scss/public.scss */
 .soc a.twitter {
   background-position: -31px 0;
 }
 
-/* line 464, ../scss/public.scss */
+/* line 465, ../scss/public.scss */
 .soc a.google {
   background-position: -62px 0;
 }
 
-/* line 469, ../scss/public.scss */
+/* line 470, ../scss/public.scss */
 .soc a:hover.facebook,
 .soc a:hover.twitter,
 .soc a:hover.google {

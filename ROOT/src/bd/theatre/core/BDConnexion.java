@@ -1,14 +1,7 @@
 package bd.theatre.core;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
-import java.util.Properties;
-
 import jus.util.IO;
-
-import oracle.jdbc.pool.OracleDataSource;
 import bd.theatre.exceptions.ExceptionConnexion;
 
 public final class BDConnexion {
@@ -24,20 +17,13 @@ public final class BDConnexion {
      * @return une nouvelle connexion a la BD
      * @throws ExceptionConnexion si la connexion a echoue
      */
-
     public static Connection getConnexion() throws ExceptionConnexion {
         Connection conn = null;
         try {
-
-            // lecture des parametres de connexion dans connection.conf
-            Properties p = new Properties();
-            InputStream is = null;
-            is = new FileInputStream(bd.theatre.utils.Constantes.Config);
-            p.load(is);
-            String url = p.getProperty("url");
-            String driver = p.getProperty("driver");
-            String login = p.getProperty("user");
-            String mdp = p.getProperty("mdp");
+            String login = "toureab";
+            String mdp = "bd2013";
+            String url = "jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:ufrima";
+            String driver = "oracle.jdbc.OracleDriver";
 
             Class.forName(driver);
             // hopper@UFR, Oracle
@@ -48,8 +34,6 @@ public final class BDConnexion {
             IO.afficherln("SQLException: " + e.getMessage());
             IO.afficherln("SQLState: " + e.getSQLState());
             IO.afficherln("VendorError: " + e.getErrorCode());
-        } catch (IOException e) {
-            throw new ExceptionConnexion("fichier conf illisible \n" + e.getMessage());
         } catch (ClassNotFoundException e) {
             throw new ExceptionConnexion("problème d'identification du pilote \n" + e.getMessage());
         }
@@ -69,7 +53,6 @@ public final class BDConnexion {
             try {
                 rs.close();
             } catch (SQLException e) {
-                ;
             }
             rs = null;
         }
@@ -77,7 +60,6 @@ public final class BDConnexion {
             try {
                 stmt.close();
             } catch (SQLException e) {
-                ;
             }
             stmt = null;
         }
@@ -85,7 +67,6 @@ public final class BDConnexion {
             try {
                 conn.close();
             } catch (SQLException e) {
-                ;
             }
             conn = null;
         }

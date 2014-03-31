@@ -21,7 +21,7 @@
         <servlet-class>web.theatre.servlets.Programme</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>PublicServlet</servlet-name>
+        <servlet-name>Public</servlet-name>
         <servlet-class>web.theatre.servlets.Public</servlet-class>
     </servlet>
     <jsp-config>
@@ -30,6 +30,22 @@
             <include-prelude>/common/taglibs.jsp</include-prelude>
         </jsp-property-group>
     </jsp-config>
+    <servlet>
+        <servlet-name>Admin</servlet-name>
+        <servlet-class>web.theatre.servlets.Admin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NouveauSpectacle</servlet-name>
+        <servlet-class>web.theatre.servlets.NouveauSpectacle</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProgrammeAdmin</servlet-name>
+        <servlet-class>web.theatre.servlets.ProgrammeAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RepresentationS</servlet-name>
+        <servlet-class>web.theatre.servlets.RepresentationS</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>nouvelleRepresentation</servlet-name>
         <url-pattern>/nouvelleRepresentation</url-pattern>
@@ -39,12 +55,49 @@
         <url-pattern>/public/programme</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>PublicServlet</servlet-name>
+        <servlet-name>Public</servlet-name>
         <url-pattern>/public/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Admin</servlet-name>
+        <url-pattern>/admin/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NouveauSpectacle</servlet-name>
+        <url-pattern>/admin/nouveauSpectacle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProgrammeAdmin</servlet-name>
+        <url-pattern>/admin/programmeAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RepresentationS</servlet-name>
+        <url-pattern>/admin/representationS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <!--
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+    -->
 </web-app>

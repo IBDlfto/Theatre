@@ -1,0 +1,455 @@
+/* 
+    Document   : private
+    Created on : 17 mars 2014, 19:25:37
+    Author     : TOURE
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@import url(commun.css);
+@import url(form.css);
+@import "compass";
+body {
+    overflow-y: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#contenu {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+header { 
+    background: url(../images/colors/blueNoise.jpg);
+    height: 40px;
+    border: 1px solid #5c8dc9;
+}
+.gridLogo {
+    line-height: 35px;
+    position: absolute;
+    z-index: 9999;
+}
+section {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+section > article {
+    position: relative;
+    margin-left: 232px;
+    height: 560px;
+    padding: 5px;
+    overflow: auto;
+}
+#topBar {
+    margin-left: 232px;
+    border-bottom: 1px solid #cccccc;
+    line-height: 33px;
+    height: 33px;
+    box-shadow: inset 0 1px 0 0 #fff, 0 1px 0 0 #fff;
+    background: linear-gradient(to bottom, #f8f8f8 0%, #eaeaea 100%);
+    position: relative;
+    font-size: 11px;
+    color: #707070;
+    text-shadow: 0 1px 0 #fff;
+}
+#topBar ul > li {
+    float: left;
+    position: relative;
+    zoom: 1;
+    overflow: visible !important;
+}
+#topBar ul > li > ul {
+    background: linear-gradient(to bottom, #f8f8f8 0%, #eaeaea 100%);
+    box-shadow: inset 0 1px 0 0 #fff, 0 1px 0 0 #fff;
+    position: absolute;
+    display: none;
+    right: 1px;
+    top: 100%;
+    z-index: 99;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    margin: 0 -1px 0 0;
+    transition: 1s;
+    zoom: 1;
+}
+#topBar ul > li > ul > li > ul {
+    position: absolute;
+    right: 100%;
+    top: -1px;
+} 
+#topBar li ul > li {
+    position: relative;
+    border-top: 1px solid #ccc;
+}
+#topBar li ul > li a {
+    width: 170px;
+}
+#topBar li:hover > ul {
+    display: block;
+}
+#topBar a {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #707070;
+    text-shadow: 0 1px 0 #fff;
+    padding: 0 12px;
+    box-shadow: inset 1px 1px 0 0 #fff;
+    zoom: 1;
+    transition: all 0.25s ease-in-out;
+}
+#topBar a:hover {
+    background: #f8f8f8;
+}
+#liens {
+    float: left;
+    overflow: hidden;
+    height: 33px;
+}
+#liens a {
+    border-right: 1px solid #ccc;
+}
+#userOptions {
+    float: right;
+}
+#userOptions a {
+    border-left: 1px solid #ccc;
+}
+#menuGauche {
+    position: absolute;
+    float: left;
+    width: 230px;
+    min-height: 100% ;
+    border: 1px solid #f5f5f5;
+    background: #e5e5e5;
+    border-right: 1px solid #ccc;
+}
+#menu {
+    border-bottom: 1px solid #f5f5f5;
+}
+#menu li a {
+    background: url(../images/navBg.png), linear-gradient(to bottom, #F8F8F8 0%, #EAEAEA 100%);
+    line-height: 39px;
+    padding-left: 12px;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #707070;
+    text-shadow: 0 1px 0 #fff;
+    border-bottom: 1px solid #cccccc;
+    height: 39px;
+    box-shadow: inset 0 1px 0 #eeeeee;
+}
+#menu li:hover > a {
+    background: url(../images/colors/blueNoise.jpg);
+    color: #fff;
+    text-shadow: none;
+    height: 39px;
+    margin-top: -2px;
+    border-top: 1px solid #5c8dc9;
+    border-bottom: 1px solid #5c8dc9;
+    border-right: 1px solid #5c8dc9;
+    margin-right: -1px;
+    margin-left: -1px;
+    box-shadow: inset 0 1px 0 #92baeb !important;
+    position: relative;
+    z-index: 10;
+}
+#menu li a.titre, #menu > li > a.curent {
+    background: url(../images/colors/blueNoise.jpg);
+    color: #fff;
+    text-shadow: none;
+    height: 39px;
+    margin-top: -2px;
+    border-top: 1px solid #5c8dc9;
+    border-bottom: 1px solid #5c8dc9;
+    border-right: 1px solid #5c8dc9;
+    margin-right: -1px;
+    margin-left: -1px;
+    box-shadow: inset 0 1px 0 #92baeb !important;
+    position: relative;
+    cursor: default;
+}
+#menu ul {
+    height: 0px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+#menu li:hover > ul {
+    height: 100%;
+}
+#menu li ul li a {
+    background: linear-gradient(to bottom, #f8f8f8 0%, #eaeaea 100%);
+    box-shadow: inset 0 1px 0 0 #fff, 0 1px 0 0 #fff;
+    font-size: 11px;
+    padding-left: 20px;
+    height: 32px;
+    line-height: 32px;
+    padding-top: 1px;
+    font-weight: normal;
+}
+#menu li ul li a:hover {
+    background: linear-gradient(to top, #f8f8f8 0%, #eaeaea 100%);
+    color: #707070;
+    box-shadow: inset 1px 1px 1px 0 #ccc, 0 1px 0 0 #ccc !important;
+    font-size: 11px;
+    padding-left: 15px;
+    height: 32px;
+    line-height: 32px;
+    padding-top: 1px;
+    font-weight: normal;
+    border: none;
+}
+.diviser {
+    margin: 25px 10px;
+    height: 3px;
+    display: block;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    box-shadow: inset 0 1px 0 #f5f5f5, 0 1px 0 #f5f5f5;
+    position: relative;
+}
+.diviser div {
+    display: block;
+    width: 40px;
+    height: 10px;
+    position: absolute;
+    margin-left: -20px;
+    left: 50%;
+    top: -4px;
+}
+aside .diviser div {
+    background: #e5e5e5;
+}
+article .diviser div {
+    background: url("../images/patterns/pattern01.png");
+}
+.diviser > div span {
+    display: block;
+    width: 28px;
+    height: 8px;
+    border: 1px solid #ccc;
+    margin-top: 1px;
+    margin-left: 5px;
+    box-shadow: inset 0 1px 0 #f5f5f5, 0 1px 0 #f5f5f5;
+}
+.fond{
+    position: relative;
+    font: 14px "Century Gothic" ;
+    background: #FFF;
+    border: 1px solid #EDEDED;
+    border-radius: 1px;
+    box-shadow: 0px 0px 5px 2px #A8A8A8;
+    margin: auto;
+    padding: 20px;
+    width: 1010px;
+}
+.fond > div, .creationSide > div {
+    display: inline-block;
+    vertical-align: top;
+    background: url(../images/bg_header.png);
+    border: 1px solid #EDEDED;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 1px #EDEDED;
+    margin-left: 5px;
+    width: 580px;
+    padding: 20px;
+}
+.creationSide > div {
+    width: 330px;
+    margin: 0 0 10px 0 !important;
+}
+.creationSide {
+    box-shadow: 0 0 0 #fff !important;
+    width: 330px !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    clear: both;
+}
+#filelist {
+    height: 410px;
+}
+#previewImage {
+    line-height: 320px;
+    max-height: 333px;
+    position: relative;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #777;
+    font-size: 20px;
+    font-weight: bold;
+}
+#previewImage img {
+    vertical-align: middle;
+    max-height: 320px;
+    max-width: 320px;
+}
+#droparea {
+    border: 4px dashed #aaa;
+    height: 200px;
+    text-align: center;
+    color: #777;
+    margin-bottom: 10px;
+}
+#droparea.hover {
+    border-color: #83b4d8;
+    background: #DFEDF7;
+}
+#droparea p {
+    margin: 0;
+    padding: 60px 0 0 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+.progressBar {
+    display: inline-block;
+    position: relative;
+    height: 10px;
+    width: 83%;
+    padding: 1px;
+    background: #abb2bc;
+    border-radius: 20px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.progress {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    border: 1px solid #5c8dc9;
+    border-radius: 20px;
+    background-color: #6188F5;
+    background-repeat: repeat-x;
+    background-size: 16px 8px;
+    background-image: linear-gradient(315deg,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0) 33%,rgba(0, 0, 0, 0.12) 33%,rgba(0, 0, 0, 0.12) 66%,rgba(0, 0, 0, 0) 66%,rgba(0, 0, 0, 0));
+    -webkit-animation: progress 2s linear infinite;
+}
+@-webkit-keyframes progress {
+    from {background-position: 0 0;}
+    to { background-position:  45px 0;}
+}
+#percent {
+    display: inline-block;
+    width: 15%;
+    overflow: hidden;
+    text-align: right;
+    font-weight: bold;
+}
+#browse {
+    position: relative;
+    right: 7px;
+    padding: 2px;
+    margin: 5px;
+    width: 65px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+#browse:before {
+    content: 'Parcourir';
+    width: 130%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    line-height: 20px;
+    background: linear-gradient(to bottom, #f0f0f0 0%,#cacaca 100%);
+    overflow: hidden;
+    border: 1px solid #ccc;
+    padding: 2px;
+    border-radius: 20px;
+    box-shadow: inset 0 1px 0 #fff, 0 1px 0 #fff;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+}
+#browse:active:before {
+    background: linear-gradient(to bottom, #eaeaea 0%, #f8f8f8 100%);
+}
+#creationForm .formLabel {
+    width: 160px;
+}
+.date {
+    width: 145px;
+    text-align: right;
+}
+.products_list {
+    width: auto;
+}
+.products_list article {
+    width: 1000px;
+    position: relative;
+    .representations {
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        .representation {
+            border: 1px solid #ededed;
+            @include border-radius(1px);
+            @include box-shadow(0px 0px 5px 2px #a8a8a8);
+            margin: 5px;
+        }
+    }
+}
+.products_list article .entry_content .actions,
+.products_list article .entry_content .title {
+    display: inline-block;
+}
+.products_list article .entry_content .actions {
+    position: absolute;
+    right: 20px;
+}
+.products_list article .entry_content p {
+    height: 50px;
+    overflow-y: auto;
+}
+.products_list article .grid_6 {
+    width: 790px;
+}
+.notifications {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;    
+}
+.notification {
+    display: inline-block;
+    border: 1px solid #F0C36D;
+    background: #F9EDBE;
+    padding: 0 10px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 30px;
+    line-height: 25px;
+    font-size: 14px;
+}
+.home:before {
+    content: '\e001';
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.8;    
+}
+.show:before {
+    content: '\e014';
+    margin: 0 5px 0 -5px;
+}
+.edit:before {
+    content: '\e0c9';
+    margin: 0 5px 0 -5px;
+}
+.delete:before {
+    content: '\e1a1';
+    margin: 0 5px 0 -5px;
+}
+.menu:before {
+    content: '\e237';
+}
+.depots:before {
+    content: '\e307';
+}
+.creation:before {
+    content: '\e0bc';    
+}

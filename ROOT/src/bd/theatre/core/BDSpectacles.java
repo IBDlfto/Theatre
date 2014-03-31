@@ -6,14 +6,14 @@
 package bd.theatre.core;
 
 import bd.theatre.beans.Spectacle;
-import bd.theatre.beans.Utilisateur;
 import bd.theatre.exceptions.ExceptionConnexion;
-import bd.theatre.exceptions.SpectacleException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -21,31 +21,32 @@ import java.util.Vector;
  */
 public class BDSpectacles {
 
+    public String error;
+
     public BDSpectacles() {
 
     }
 
-    public Vector<Spectacle> getSpectacle()
-            throws SpectacleException, ExceptionConnexion {
-        Vector<Spectacle> res = new Vector<Spectacle>();
-        String requete;
-        Statement stmt;
-        ResultSet rs;
-        Connection conn = BDConnexion.getConnexion();
-
-        requete = "select * from LesSpectacles";
+    public List<Spectacle> getSpectacle(HttpServletRequest request) {
+        List<Spectacle> res = new ArrayList<Spectacle>();
         try {
+            String requete;
+            Statement stmt = null;
+            ResultSet rs = null;
+            Connection conn = BDConnexion.getConnexion();
+
+            requete = "select * from LesSpectacles";
             stmt = conn.createStatement();
             rs = stmt.executeQuery(requete);
             while (rs.next()) {
-                res.addElement(new Spectacle(rs.getInt(1), rs.getString(2), rs.getString(3)));
+                res.add(new Spectacle(rs.getInt(1), rs.getString(2), rs.getString(3)));
             }
+            BDConnexion.FermerTout(conn, stmt, rs);
         } catch (SQLException e) {
-            throw new SpectacleException(" Problème dans l'interrogation des spéctacles.."
-                    + "Code Oracle " + e.getErrorCode()
-                    + "Message " + e.getMessage());
+            error = e.getMessage();
+        } catch (ExceptionConnexion ex) {
+            error = ex.getMessage();
         }
-        BDConnexion.FermerTout(conn, stmt, rs);
         return res;
     }
 }

@@ -17,40 +17,21 @@
             <div class="grid_12">
                 <h2 class="product-title">Spéctacles à venir</h2>
             </div><!-- .grid_12 -->
-
             <div class="clear"></div>
-
             <div class="spectacles">
-                <article class="grid_3 fold" id="">
-                    <img src="../images/test1.jpg" />
-                    <span class="menu">
-                        <span class="info icone"></span>
-                        <span class="addCart icone"></span>
-                    </span>
-                    <span class="titre">
-                        <h2>Titre du spectacle</h2>
-                    </span>
-                </article>
-                <div class="clear"></div>
-                <article class="grid_3 fold" id="">
-                    <img src="../images/test2.jpg" />
-                </article>
-                <div class="clear"></div>
-                <article class="grid_3 fold" id="">
-                    <img src="../images/theatre-1.jpg" />
-                </article>
-                <div class="clear"></div>
-                <article class="grid_3 fold" id="">
-                    <img src="../images/test2.jpg" />
-                </article>
-                <div class="clear"></div>
-                <article class="grid_3 fold" id="">
-                    <img src="../images/test2.jpg" />
-                </article>
-                <div class="clear"></div>
-                <article class="grid_3 fold" id="">
-                    <img src="../images/test2.jpg" />
-                </article>
+                <c:forEach var="spectacle" items="${spectacles}">
+                    <article class="grid_3 fold" id="<c:out value="${spectacle.id}"/>">
+                        <img src="../uploads/1367274198351.jpg" />
+                        <span class="menu">
+                            <span class="info icone"></span>
+                            <span class="addCart icone"></span>
+                        </span>
+                        <span class="titre">
+                            <h2><c:out value="${spectacle.nom}"/></h2>
+                        </span>
+                    </article>
+                    <div class="clear"></div>
+                </c:forEach>                
             </div><!-- .products -->
             <div class="clear"></div>
         </div><!-- #content -->

@@ -57,7 +57,7 @@
                 <h3>Administration</h3>
                 <nav class="f_menu">
                     <ul>
-                        <li><a href="connexionAdmin">Connexion Administrateur</a></li>
+                        <li><a href="/admin/">Connexion Administrateur</a></li>
                     </ul>
                 </nav><!-- .private -->
             </div><!-- .grid_3 -->

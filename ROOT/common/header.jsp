@@ -49,10 +49,10 @@
                     <li class="parent">
                         <a href="#">Accès Rapide</a>
                         <ul class="sub">
-                            <li><a href="#">Accueil</a></li>
+                            <li><a href="index">Accueil</a></li>
                             <li><a href="#">Connexion</a></li>
                             <li><a href="#">Inscription</a></li>
-                            <li><a href="#">Administrateur</a></li>
+                            <li><a href="../admin/">Administrateur</a></li>
                         </ul>
                     </li>
                 </ul>

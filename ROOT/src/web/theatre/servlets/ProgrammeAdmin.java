@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package web.theatre.servlets;
 
 import bd.theatre.beans.Spectacle;
@@ -18,9 +19,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author toure
  */
-public class Public extends HttpServlet {
-
-    public final static String VUE = "/public/index.jsp";
+public class ProgrammeAdmin extends HttpServlet {
+    
+    public final static String VUE = "/admin/spectacles.jsp";
     public final static String SPECTACLE = "spectacles";
 
     @Override
@@ -30,5 +31,10 @@ public class Public extends HttpServlet {
         List<Spectacle> spectacles = form.getSpectacle(request);
         request.setAttribute(SPECTACLE, spectacles);
         this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
     }
 }
