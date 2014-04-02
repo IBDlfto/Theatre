@@ -7,7 +7,7 @@
         </c:when>
         <c:otherwise>
             <c:forEach var="spectacle" items="${spectacles}">
-                <article class="spectacle" id="${produit.id}">
+                <article class="spectacle" id="${spectacle.id}">
                     <div class="grid_3">
                         <div class="prev">
                             <a href="#"><img src="<c:out value="../uploads/" />"></a>
@@ -33,11 +33,6 @@
                             </div>
                         </div>
                     </div><!-- .grid_6 -->
-                    <div class="representations">
-                        <div class="representation"></div>
-                        <div class="representation"></div>
-                        <div class="representation"></div>
-                    </div>
                     <div class="clear"></div>
                 </article>
             </c:forEach>

@@ -691,3 +691,11 @@ div.checker span.checked:hover {
 div.checker:active span.checked {
     background: url(../images/forms/checkboxActive.png) no-repeat -49px 1px; 
 }
+
+/* Full screen */
+#over {
+    position: fixed;
+    right: 0; top: 0; left: 0; bottom: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.8);    
+}

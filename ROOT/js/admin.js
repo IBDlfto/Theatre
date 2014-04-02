@@ -125,12 +125,18 @@ $(function() {
         //});
     });
 
+    // Affichage des representations
     $('section').on('click', '.spectacle .show', function() {
         var $article = $(this).parents('article:first');
         $('#contenu').notif({content: 'Affichage des répresentations en cours ...'});
 
-        //$.post('representationS', {id: $article.attr('id')}, function() {
-        //});
+        $.post('representationS', {numS: $article.attr('id')}, function(data) {
+            $article.find('.grid_6').
+                    after($("<div class='representations'>" + data + "</div>").
+                    slideDown("slow", function() {
+                        closeNotif();
+            }));
+        });
     });
 
     /* ------------ Pagination -------------- */

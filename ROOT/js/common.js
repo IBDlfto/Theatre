@@ -6,4 +6,10 @@ $(function() {
         img.wrap("<div class='top' />");
         article.find("div").append("<div class='shadow' />");
     });
+    
+    $(".addCart").on("click", function() {
+        var $over = $("<div id='over' />");
+        $("body").prepend($over);
+        alert('ok');
+    });
 });
