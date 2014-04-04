@@ -46,10 +46,10 @@
         <servlet-name>RepresentationS</servlet-name>
         <servlet-class>web.theatre.servlets.RepresentationS</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>nouvelleRepresentation</servlet-name>
-        <url-pattern>/nouvelleRepresentation</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>Reserver</servlet-name>
+        <servlet-class>web.theatre.servlets.Reserver</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Programme</servlet-name>
         <url-pattern>/public/programme</url-pattern>
@@ -73,6 +73,14 @@
     <servlet-mapping>
         <servlet-name>RepresentationS</servlet-name>
         <url-pattern>/admin/representationS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>nouvelleRepresentation</servlet-name>
+        <url-pattern>/admin/nouvelleRepresentation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Reserver</servlet-name>
+        <url-pattern>/public/reserver</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

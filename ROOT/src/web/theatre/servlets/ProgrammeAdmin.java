@@ -28,7 +28,7 @@ public class ProgrammeAdmin extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         BDSpectacles form = new BDSpectacles();
-        List<Spectacle> spectacles = form.getSpectacle(request);
+        List<Spectacle> spectacles = form.getSpectacle();
         request.setAttribute(SPECTACLE, spectacles);
         this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
     }

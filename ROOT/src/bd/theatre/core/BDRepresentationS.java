@@ -6,12 +6,14 @@
 package bd.theatre.core;
 
 import bd.theatre.beans.Representation;
-import bd.theatre.beans.Spectacle;
 import bd.theatre.exceptions.ExceptionConnexion;
+import bd.theatre.utils.Fonctions;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -24,9 +26,10 @@ public class BDRepresentationS {
 
     public String error;
 
-     public List<Representation> getSpectacle(int numS/*HttpServletRequest request*/) {
+    public List<Representation> getRepresentation(HttpServletRequest request) {
 
-        numS = 101;//Integer.parseInt(request.getParameter("numS"));
+        int numS = Integer.parseInt(request.getParameter("numS"));
+
         List<Representation> res = new ArrayList<Representation>();
         try {
             String requete;
@@ -37,9 +40,11 @@ public class BDRepresentationS {
             requete = "SELECT * FROM LesRepresentations WHERE numS = ?";
             stmt = conn.prepareStatement(requete);
             stmt.setInt(1, numS);
-            rs = stmt.executeQuery(requete);
+            rs = stmt.executeQuery();
+
             while (rs.next()) {
-                res.add(new Representation(rs.getInt(1), rs.getString(2)));
+                String date = Fonctions.formatter(rs.getDate(2));
+                res.add(new Representation(numS, date));
             }
             BDConnexion.FermerTout(conn, stmt, rs);
         } catch (SQLException e) {
@@ -49,12 +54,35 @@ public class BDRepresentationS {
         }
         return res;
     }
-    public static void main(String[] args) {
-        BDRepresentationS form = new BDRepresentationS();
-        List<Representation> list = form.getSpectacle(101);
-        System.out.println(form.error);
-        for(Representation r : list) {
-            System.out.println(r.getDate());
+
+    public String addRepresentation(HttpServletRequest request) {
+        String res = null;
+        int numS = Integer.parseInt(request.getParameter("numS"));
+        String date = request.getParameter("date");
+
+        try {
+            String requete;
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            Connection conn = BDConnexion.getConnexion();
+
+            requete = "INSERT INTO LesRepresentations values(?, ?)";
+            stmt = conn.prepareStatement(requete);
+            stmt.setInt(1, numS);
+            stmt.setTimestamp(2, Timestamp.valueOf(date));
+            if (stmt.executeUpdate() > 0) {
+                String dateret = Fonctions.formatter(new Date(Timestamp.valueOf(date).getTime()));
+                res = "{\"error\": false, \"message\": \"Réprensentation ajoutée avec succès\","
+                        + " \"date\": \"" + dateret + "\"}";
+            } else {
+                res = "{\"error\": true, \"message\": \"Une erreur s'est produite lors de l'ajout\"}";
+            }
+            BDConnexion.FermerTout(conn, stmt, rs);
+        } catch (SQLException e) {
+            res = "{\"error\": true, \"message\": \"" + e.getMessage() + "\"}";
+        } catch (ExceptionConnexion ex) {
+            res = "{\"error\": true, \"message\": \"" + ex.getMessage() + "\"}";
         }
+        return res;
     }
 }

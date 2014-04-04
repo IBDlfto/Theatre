@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -27,7 +26,7 @@ public class BDSpectacles {
 
     }
 
-    public List<Spectacle> getSpectacle(HttpServletRequest request) {
+    public List<Spectacle> getSpectacle() {
         List<Spectacle> res = new ArrayList<Spectacle>();
         try {
             String requete;
@@ -48,5 +47,9 @@ public class BDSpectacles {
             error = ex.getMessage();
         }
         return res;
+    }
+    
+    public static void main(String[] args) throws ExceptionConnexion {
+        BDConnexion.getConnexion();
     }
 }

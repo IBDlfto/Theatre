@@ -512,32 +512,38 @@ article .diviser div {
   -moz-box-shadow: 0px 0px 5px 2px #a8a8a8;
   box-shadow: 0px 0px 5px 2px #a8a8a8;
   margin: 5px;
+  padding: 5px;
+}
+/* line 394, ../scss/admin.scss */
+.products_list article .representations .addRep {
+  margin: 20px;
+  float: right;
 }
 
-/* line 396, ../scss/admin.scss */
+/* line 401, ../scss/admin.scss */
 .products_list article .entry_content .actions,
 .products_list article .entry_content .title {
   display: inline-block;
 }
 
-/* line 399, ../scss/admin.scss */
+/* line 404, ../scss/admin.scss */
 .products_list article .entry_content .actions {
   position: absolute;
   right: 20px;
 }
 
-/* line 403, ../scss/admin.scss */
+/* line 408, ../scss/admin.scss */
 .products_list article .entry_content p {
   height: 50px;
   overflow-y: auto;
 }
 
-/* line 407, ../scss/admin.scss */
+/* line 412, ../scss/admin.scss */
 .products_list article .grid_6 {
   width: 790px;
 }
 
-/* line 410, ../scss/admin.scss */
+/* line 415, ../scss/admin.scss */
 .notifications {
   width: 100%;
   position: absolute;
@@ -547,7 +553,7 @@ article .diviser div {
   text-align: center;
 }
 
-/* line 418, ../scss/admin.scss */
+/* line 423, ../scss/admin.scss */
 .notification {
   display: inline-block;
   border: 1px solid #F0C36D;
@@ -560,7 +566,7 @@ article .diviser div {
   font-size: 14px;
 }
 
-/* line 429, ../scss/admin.scss */
+/* line 434, ../scss/admin.scss */
 .home:before {
   content: '\e001';
   font-size: 18px;
@@ -568,35 +574,35 @@ article .diviser div {
   line-height: 1.8;
 }
 
-/* line 435, ../scss/admin.scss */
+/* line 440, ../scss/admin.scss */
 .show:before {
   content: '\e014';
   margin: 0 5px 0 -5px;
 }
 
-/* line 439, ../scss/admin.scss */
+/* line 444, ../scss/admin.scss */
 .edit:before {
   content: '\e0c9';
   margin: 0 5px 0 -5px;
 }
 
-/* line 443, ../scss/admin.scss */
+/* line 448, ../scss/admin.scss */
 .delete:before {
   content: '\e1a1';
   margin: 0 5px 0 -5px;
 }
 
-/* line 447, ../scss/admin.scss */
+/* line 452, ../scss/admin.scss */
 .menu:before {
   content: '\e237';
 }
 
-/* line 450, ../scss/admin.scss */
+/* line 455, ../scss/admin.scss */
 .depots:before {
   content: '\e307';
 }
 
-/* line 453, ../scss/admin.scss */
+/* line 458, ../scss/admin.scss */
 .creation:before {
   content: '\e0bc';
 }

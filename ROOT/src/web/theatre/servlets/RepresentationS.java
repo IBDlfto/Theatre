@@ -30,7 +30,7 @@ public final static String VUE = "/admin/representations.jsp";
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         BDRepresentationS form = new BDRepresentationS();
-        List<Representation> representations = form.getSpectacle(request);
+        List<Representation> representations = form.getRepresentation(request);
         request.setAttribute("error", form.error);
         request.setAttribute(REPRESENTATION, representations);
         this.getServletContext().getRequestDispatcher(VUE).forward(request, response);

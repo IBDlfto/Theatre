@@ -10,4 +10,5 @@
             <c:out value="${representation.date}"/>
         </div>
     </c:forEach>
+    <span class="addRep icone button sButton bOlive">Nouvelle répresentation</span>
 </div>

@@ -24,7 +24,7 @@ create table LesSpectacles (numS number (4) NOT NULL AUTO_INCREMENT, nomS varcha
       constraint spec_c1 primary key (numS),   
       constraint spec_c2 check (numS > 0) 
 ) ; 
-create table LesRepresentations (numS number (4) NOT NULL AUTO_INCREMENT, dateRep date,
+create table LesRepresentations (numS number (4) NOT NULL, dateRep timestamp NOT NULL,
       constraint rep_c1 primary key (numS, dateRep),
       constraint rep_c2 foreign key (numS) references LesSpectacles (numS) 
 ) ; 
