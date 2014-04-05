@@ -7,11 +7,8 @@
 package web.theatre.servlets;
 
 import bd.theatre.beans.Representation;
-import bd.theatre.beans.Spectacle;
 import bd.theatre.core.BDRepresentationS;
-import bd.theatre.core.BDSpectacles;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

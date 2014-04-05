@@ -9,6 +9,7 @@ $(function() {
     
     $(".addCart").on("click", function() {
         var $over = $("<div id='over' />");
+        var $representations = 
         $("body").prepend($over);
         alert('ok');
     });
