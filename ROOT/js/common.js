@@ -6,17 +6,26 @@ $(function() {
         img.wrap("<div class='top' />");
         article.find("div").append("<div class='shadow' />");
     });
-    
+
+    var $over = $("<div id='over' />");
+    var $content = $("<div />");
+    $over.append($content);
     $(".addCart").on("click", function() {
-        var $over = $("<div id='over' />");
         var id = $(this).parents("article:first").attr("id");
-        ;
-        $.post('representationS', {numS: id, public: 'public'}, function(data) {
-            $over.html(data);
-        });
-        $("body").prepend($over);
-        $over.click(function() {
-            this.remove();
+        loading();
+        $.post('representationS', {numS: id, public: 'public'}, function(data, status) {
+            $content.html(data);
+            console.log(status);
         });
     });
+    function loading() {
+        $over.show();
+        var $loader = $("<span class='loader'><img src='../images/preloader16.gif' /> Chargement en cours ...</span>");
+        $("body").prepend($over);
+        $content.html($loader);
+        var $close = $("<span class='close'>x Fermer</span>").on("click", function() {
+            $over.hide();
+        });
+        $over.prepend($close);
+    }
 });

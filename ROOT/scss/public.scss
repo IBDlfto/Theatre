@@ -344,11 +344,12 @@ input {outline: none;}
 /* Representations */
 .representations {
     display: inline-block;
-    width: 30%;
-    height: 30%;
-    margin: 33% ;
+    width: 50%;
+    height: 50%;
+    margin: 10% 25%;
     overflow-y: auto;
     background: #fff;
+    z-index: 999999;
     .representation {
         border: 1px solid #ededed;
         @include border-radius(1px);

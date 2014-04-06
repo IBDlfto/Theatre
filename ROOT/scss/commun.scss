@@ -1,6 +1,7 @@
 @import url(style.css);
 @import url(animate.css);
 @import url(Delta/theme/jquery-ui.css);
+@import "compass";
 
 body {
     font-family: "Century Gothic", "Trebuchet MS", Verdana, Tahoma, sans-serif;
@@ -97,47 +98,47 @@ a {
     color: #fff;
 }
 @-webkit-keyframes animate {
-    
-  0% {
-    -webkit-transform: rotate(3deg);
-  }
 
-  50% {
-    -webkit-transform: rotate(-3deg);
-    margin-left: 40px;
-  }
+    0% {
+        -webkit-transform: rotate(3deg);
+    }
 
-  100% {
-    -webkit-transform: rotate(3deg);
-  }
+    50% {
+        -webkit-transform: rotate(-3deg);
+        margin-left: 40px;
+    }
+
+    100% {
+        -webkit-transform: rotate(3deg);
+    }
 }
 @-moz-keyframes animate {
-  0% {
-    -moz-transform: rotate(3deg);
-  }
+    0% {
+        -moz-transform: rotate(3deg);
+    }
 
-  50% {
-    -moz-transform: rotate(-3deg);
-    margin-left: 40px;
-  }
+    50% {
+        -moz-transform: rotate(-3deg);
+        margin-left: 40px;
+    }
 
-  100% {
-    -moz-transform: rotate(3deg);
-  }
+    100% {
+        -moz-transform: rotate(3deg);
+    }
 }
 @-ms-keyframes animate {
-  0% {
-    -ms-transform: rotate(3deg);
-  }
+    0% {
+        -ms-transform: rotate(3deg);
+    }
 
-  50% {
-    -ms-transform: rotate(-3deg);
-    margin-left: 40px;
-  }
+    50% {
+        -ms-transform: rotate(-3deg);
+        margin-left: 40px;
+    }
 
-  100% {
-    -ms-transform: rotate(3deg);
-  }
+    100% {
+        -ms-transform: rotate(3deg);
+    }
 }
 a {text-decoration: none;}
 .gridUser {width: 850px;}
@@ -697,5 +698,23 @@ div.checker:active span.checked {
     position: fixed;
     right: 0; top: 0; left: 0; bottom: 0;
     z-index: 9999;
-    background: rgba(0,0,0,0.8);    
+    background: rgba(0, 0, 0, 0.85);    
+    .loader {
+        display: block;
+        color: #FFF;
+        font: 20px 'PT Sans', Arial, Verdana, sans-serif;
+        margin: 20% 40%;
+        vertical-align: top;
+    }
+    .close {
+        display: inline-block;
+        position: absolute;
+        color: #FFF;
+        font: 15px 'PT Sans', Arial, Verdana, sans-serif;
+        top: 0; right: 0;
+        background: rgb(0,0,0);  
+        padding: 5px;
+        @include border-bottom-left-radius(5px);
+        cursor: pointer;
+    }
 }
