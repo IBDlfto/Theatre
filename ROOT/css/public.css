@@ -515,10 +515,13 @@ input {
 /* line 345, ../scss/public.scss */
 .representations {
   display: inline-block;
-  width: 100%;
-  margin: 0;
+  width: 30%;
+  height: 30%;
+  margin: 33%;
+  overflow-y: auto;
+  background: #fff;
 }
-/* line 349, ../scss/public.scss */
+/* line 352, ../scss/public.scss */
 .representations .representation {
   border: 1px solid #ededed;
   -webkit-border-radius: 1px;
@@ -534,7 +537,7 @@ input {
 }
 
 /* Form */
-/* line 358, ../scss/public.scss */
+/* line 361, ../scss/public.scss */
 .registration {
   font: 14px "Century Gothic";
   background: #FFF;
@@ -546,7 +549,7 @@ input {
   width: 1100px;
 }
 
-/* line 368, ../scss/public.scss */
+/* line 371, ../scss/public.scss */
 .registed {
   display: inline-block;
   vertical-align: top;
@@ -559,7 +562,7 @@ input {
   padding: 20px;
 }
 
-/* line 379, ../scss/public.scss */
+/* line 382, ../scss/public.scss */
 .captcha {
   display: inline-block;
   text-align: center;
@@ -569,12 +572,12 @@ input {
 /*****************************************************************************
   Footer
 *******************************************************************************/
-/* line 387, ../scss/public.scss */
+/* line 390, ../scss/public.scss */
 footer ul {
   padding: 0;
 }
 
-/* line 390, ../scss/public.scss */
+/* line 393, ../scss/public.scss */
 .footer_navigation {
   background: url(../images/bg_header.png) repeat center top;
   border-top: 1px solid #c5c5c5;
@@ -583,12 +586,12 @@ footer ul {
   padding: 60px 0 0 0;
 }
 
-/* line 397, ../scss/public.scss */
+/* line 400, ../scss/public.scss */
 .footer_navigation .grid_3 {
   height: 178px;
 }
 
-/* line 400, ../scss/public.scss */
+/* line 403, ../scss/public.scss */
 .footer_navigation h3 {
   border-bottom: 1px solid #c5c5c5;
   font: normal 18px/18px 'PT Sans', Arial, Verdana, sans-serif;
@@ -597,7 +600,7 @@ footer ul {
   text-transform: uppercase;
 }
 
-/* line 407, ../scss/public.scss */
+/* line 410, ../scss/public.scss */
 ul.f_contact li {
   background: url(../images/li_adr.png) no-repeat 3px 50%;
   color: #707070;
@@ -608,34 +611,34 @@ ul.f_contact li {
   padding: 0 0 0 25px;
 }
 
-/* line 417, ../scss/public.scss */
+/* line 420, ../scss/public.scss */
 ul.f_contact li + li {
   background: url(../images/li_phone.png) no-repeat 0px 50%;
 }
 
-/* line 420, ../scss/public.scss */
+/* line 423, ../scss/public.scss */
 ul.f_contact li + li + li {
   background: url(../images/li_let.png) no-repeat 0px 50%;
 }
 
-/* line 424, ../scss/public.scss */
+/* line 427, ../scss/public.scss */
 .footer_navigation nav.f_menu ul {
   list-style: none;
 }
 
-/* line 427, ../scss/public.scss */
+/* line 430, ../scss/public.scss */
 .footer_navigation nav.f_menu ul a {
   color: #707070;
   font: 13px/24px 'PT Sans', Arial, Verdana, sans-serif;
 }
 
-/* line 431, ../scss/public.scss */
+/* line 434, ../scss/public.scss */
 .footer_navigation nav.f_menu ul a:hover {
   color: #444;
   text-decoration: underline;
 }
 
-/* line 435, ../scss/public.scss */
+/* line 438, ../scss/public.scss */
 .footer_navigation .payments-socials {
   display: inline-block;
   background: #fff;
@@ -645,31 +648,31 @@ ul.f_contact li + li + li {
   padding: 0 12px;
 }
 
-/* line 443, ../scss/public.scss */
+/* line 446, ../scss/public.scss */
 .footer_navigation .payments {
   float: left;
   padding: 22px 0 0 24px;
 }
 
-/* line 447, ../scss/public.scss */
+/* line 450, ../scss/public.scss */
 .footer_info {
   background: url(../images/bg_line.png) repeat center top;
   height: 70px;
 }
 
-/* line 451, ../scss/public.scss */
+/* line 454, ../scss/public.scss */
 .footer_info p.copyright {
   color: #999;
   font: 12px/70px 'PT Sans', Arial, Verdana, sans-serif;
   margin: 0;
 }
 
-/* line 456, ../scss/public.scss */
+/* line 459, ../scss/public.scss */
 .soc {
   margin: 19px 0 0 0;
 }
 
-/* line 459, ../scss/public.scss */
+/* line 462, ../scss/public.scss */
 .soc a {
   background-image: url(../images/bg_soc.png);
   background-repeat: no-repeat;
@@ -687,22 +690,22 @@ ul.f_contact li + li + li {
   transition: 0.5s;
 }
 
-/* line 472, ../scss/public.scss */
+/* line 475, ../scss/public.scss */
 .soc a.facebook {
   background-position: 0 0;
 }
 
-/* line 475, ../scss/public.scss */
+/* line 478, ../scss/public.scss */
 .soc a.twitter {
   background-position: -31px 0;
 }
 
-/* line 478, ../scss/public.scss */
+/* line 481, ../scss/public.scss */
 .soc a.google {
   background-position: -62px 0;
 }
 
-/* line 483, ../scss/public.scss */
+/* line 486, ../scss/public.scss */
 .soc a:hover.facebook,
 .soc a:hover.twitter,
 .soc a:hover.google {

@@ -48,8 +48,4 @@ public class BDSpectacles {
         }
         return res;
     }
-    
-    public static void main(String[] args) throws ExceptionConnexion {
-        BDConnexion.getConnexion();
-    }
 }

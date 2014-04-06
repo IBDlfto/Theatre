@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class RepresentationS extends HttpServlet {
 public final static String VUE = "/admin/representations.jsp";
+public final static String VUE_PUBLIC = "/public/representations.jsp";
     public final static String REPRESENTATION = "representations";
 
     @Override
@@ -30,6 +31,9 @@ public final static String VUE = "/admin/representations.jsp";
         List<Representation> representations = form.getRepresentation(request);
         request.setAttribute("error", form.error);
         request.setAttribute(REPRESENTATION, representations);
+        if(request.getParameter("public") != null) {
+            this.getServletContext().getRequestDispatcher(VUE_PUBLIC).forward(request, response);
+        }
         this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
     }
 }

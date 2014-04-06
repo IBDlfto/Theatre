@@ -71,16 +71,17 @@
         <url-pattern>/admin/programmeAdmin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RepresentationS</servlet-name>
-        <url-pattern>/admin/representationS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>nouvelleRepresentation</servlet-name>
         <url-pattern>/admin/nouvelleRepresentation</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Reserver</servlet-name>
         <url-pattern>/public/reserver</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RepresentationS</servlet-name>
+        <url-pattern>/admin/representationS</url-pattern>
+        <url-pattern>/public/representationS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

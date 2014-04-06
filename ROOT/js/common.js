@@ -9,8 +9,14 @@ $(function() {
     
     $(".addCart").on("click", function() {
         var $over = $("<div id='over' />");
-        var $representations = 
+        var id = $(this).parents("article:first").attr("id");
+        ;
+        $.post('representationS', {numS: id, public: 'public'}, function(data) {
+            $over.html(data);
+        });
         $("body").prepend($over);
-        alert('ok');
+        $over.click(function() {
+            this.remove();
+        });
     });
 });
