@@ -24,40 +24,9 @@ public class BDDossiers {
 
     public String error;
 
-    public List<Dossier> getDossiers(HttpServletRequest request)
-            throws DossierException, ExceptionConnexion {
-
-        int nodossier = Integer.parseInt(request.getParameter("nodossier"));
-        List<Dossier> res = new ArrayList<Dossier>();
-        try {
-            String requete;
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
-            Connection conn = BDConnexion.getConnexion();
-
-            requete = "SELECT * FROM Lesdossiers WHERE nodossier = ?";
-            stmt = conn.prepareStatement(requete);
-            stmt.setInt(1, nodossier);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                res.add(new Dossier(rs.getInt(1), rs.getDouble(2)));
-            }
-            BDConnexion.FermerTout(conn, stmt, rs);
-        } catch (SQLException e) {
-            throw new DossierException(" Problème dans l'interrogation des dossiers.."
-                    + "Code Oracle " + e.getErrorCode()
-                    + "Message " + e.getMessage());
-        } catch (ExceptionConnexion ex) {
-            error = ex.getMessage();
-            throw new ExceptionConnexion(ex);
-        }
-        return res;
-    }
-
     public boolean addDossiers(HttpServletRequest request)
             throws DossierException, ExceptionConnexion {
 
-        int nodossier = Integer.parseInt(request.getParameter("nodossier"));
         int montant = Integer.parseInt(request.getParameter("montant"));
 
         try {
@@ -65,10 +34,15 @@ public class BDDossiers {
             PreparedStatement stmt = null;
             ResultSet rs = null;
             Connection conn = BDConnexion.getConnexion();
+            
+            requete = "SELECT MAX(noSerie) noSerie FROM LesTickets";
+            stmt = conn.prepareStatement(requete);
+            rs = stmt.executeQuery();
+            int noDossier = rs.getInt(1) + 1;
 
             requete = "INSERT INTO LesDossiers ('?','?')";
             stmt = conn.prepareStatement(requete);
-            stmt.setInt(1, nodossier);
+            stmt.setInt(1, noDossier);
             stmt.setInt(2, montant);
             rs = stmt.executeQuery();
             BDConnexion.FermerTout(conn, stmt, rs);

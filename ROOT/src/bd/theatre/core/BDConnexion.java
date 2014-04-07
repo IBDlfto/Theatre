@@ -71,4 +71,28 @@ public final class BDConnexion {
             conn = null;
         }
     }
+    
+    public static void FermerTout(Connection conn, PreparedStatement stmt, ResultSet rs) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+            }
+            rs = null;
+        }
+        if (stmt != null) {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+            }
+            stmt = null;
+        }
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+            }
+            conn = null;
+        }
+    }
 }

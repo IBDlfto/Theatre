@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -38,13 +40,19 @@ public class BDTickets {
             ResultSet rs = null;
             Connection conn = BDConnexion.getConnexion();
 
-            requete = "INSERT INTO Lestickets(numS, dateRep, noPlace, noRang, dateEmission) "
+            requete = "SELECT MAX(noSerie) noSerie FROM LesTickets";
+            stmt = conn.prepareStatement(requete);
+            rs = stmt.executeQuery();
+            int noSerie = rs.getInt(1) + 1;
+
+            requete = "INSERT INTO Lestickets(numS, dateRep, noPlace, noRang, dateEmission, noSerie) "
                     + "VALUES (?, ?, ?, ?, NOW(), ?)";
             stmt = conn.prepareStatement(requete);
             stmt.setInt(1, numS);
             stmt.setTimestamp(2, Timestamp.valueOf(dateRep));
             stmt.setInt(3, noPlace);
             stmt.setInt(4, noRang);
+            stmt.setInt(5, noSerie);
             if (stmt.executeUpdate() > 0) {
                 requete = "SELECT p.noPlace, p.noRang, c.prix FROM LesPlaces p "
                         + "INNER JOIN LesZones z ON p.numZ = z.numZ "
@@ -75,5 +83,45 @@ public class BDTickets {
             throw new ExceptionConnexion(ex);
         }
         return message;
+    }
+
+    public void supprimer(int numS, String dateRep, int noPlace, int noRang, int numZ) {
+        try {
+            String requete;
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            Connection conn = BDConnexion.getConnexion();
+            requete = "DELETE LesTickets WHERE numS = ? AND dateRep = ? "
+                    + "AND noPlace = ? AND noRang = ? AND numZ = ?";
+            stmt = conn.prepareStatement(requete);
+            stmt.setInt(1, numS);
+            stmt.setTimestamp(2, Timestamp.valueOf(dateRep));
+            stmt.setInt(3, noPlace);
+            stmt.setInt(4, noRang);
+            stmt.setInt(5, numZ);
+            stmt.executeUpdate();
+            BDConnexion.FermerTout(conn, stmt, rs);
+        } catch (SQLException e) {
+            error = e.getMessage();
+        } catch (ExceptionConnexion ex) {
+            error = ex.getMessage();
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            String requete;
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            Connection conn = BDConnexion.getConnexion();
+            requete = "SELECT MAX(noSerie) noSerie FROM LesTickets";
+            stmt = conn.prepareStatement(requete);
+            rs = stmt.executeQuery();
+            System.out.println(rs.getInt(1) + 1);
+        } catch (ExceptionConnexion ex) {
+            Logger.getLogger(BDTickets.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(BDTickets.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
