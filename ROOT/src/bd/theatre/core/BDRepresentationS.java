@@ -44,7 +44,9 @@ public class BDRepresentationS {
 
             while (rs.next()) {
                 String date = Fonctions.formatter(rs.getDate(2));
-                res.add(new Representation(numS, date));
+                Representation rep = new Representation(numS, date);
+                rep.setDateF(Fonctions.format(rs.getDate(2)));
+                res.add(rep);
             }
             BDConnexion.FermerTout(conn, stmt, rs);
         } catch (SQLException e) {

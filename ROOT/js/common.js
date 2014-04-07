@@ -15,9 +15,40 @@ $(function() {
         loading();
         $.post('representationS', {numS: id, public: 'public'}, function(data, status) {
             $content.html(data);
-            console.log(status);
         });
     });
+    $("body").on("click", ".placesDispo", function() {
+        var numS = $(this).parent().data("nums");
+        var dateRep = $(this).parent().data("date");
+        console.log(numS + " " + dateRep);
+        $(".close").trigger("click");
+        loading();
+        $.post('places', {numS: numS, dateRep: dateRep}, function(data) {
+            $content.html(data);
+        });
+    });
+    $("body").on("click", ".placeLibre", function() {
+        var $this = $(this);
+        $this.removeClass("placeLibre").addClass("auPanier");
+        $.cookie("panier", $.cookie("panier") + $this.data("place") + "//" + $this.data("rang") + "---");
+        refreshCart();
+    });
+    $("body").on("click", ".auPanier", function() {
+        var $this = $(this);
+        $this.removeClass("auPanier").addClass("placeLibre");
+    });
+    if ($.cookie("panier") === undefined) {
+        $.cookie("panier", "---");
+    } else {
+        console.log("ok");
+    }
+    console.log($.cookie("panier"));
+    refreshCart();
+
+    function refreshCart() {
+        $("#cart").text($.cookie("panier").split("---").length - 2);
+    }
+
     function loading() {
         $over.show();
         var $loader = $("<span class='loader'><img src='../images/preloader16.gif' /> Chargement en cours ...</span>");

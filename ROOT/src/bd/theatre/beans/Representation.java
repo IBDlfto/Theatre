@@ -11,20 +11,21 @@ package bd.theatre.beans;
  * @author toure
  */
 public class Representation {
-    private int num;
+    private int numS;
     private String date;
+    private String dateF;
 
     public Representation(int num, String date) {
-        this.num = num;
+        this.numS = num;
         this.date = date;
     }
 
-    public int getNum() {
-        return num;
+    public int getNumS() {
+        return numS;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNumS(int num) {
+        this.numS = num;
     }
 
     public String getDate() {
@@ -33,5 +34,13 @@ public class Representation {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getDateF() {
+        return dateF;
+    }
+
+    public void setDateF(String dateF) {
+        this.dateF = dateF;
     }
 }

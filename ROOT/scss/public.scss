@@ -79,6 +79,7 @@ hgroup{
         background: black;
         top: 130px;
         z-index: 10000;
+        color: #fff;
     }
 }
 .welcome{
@@ -342,7 +343,7 @@ section {
 input {outline: none;}
 
 /* Representations */
-.representations {
+.representations, .places {
     display: inline-block;
     width: 50%;
     height: 50%;
@@ -350,15 +351,36 @@ input {outline: none;}
     overflow-y: auto;
     background: #fff;
     z-index: 999999;
-    .representation {
+    @include border-radius(1px);
+    @include box-shadow(0px 0px 5px 2px #a8a8a8);
+    .representation, .placeLibre {
         border: 1px solid #ededed;
         @include border-radius(1px);
         @include box-shadow(0px 0px 5px 2px #a8a8a8);
         margin: 5px;
         padding: 5px;
     }
+    .placeLibre, .auPanier {
+        display: inline-block;
+        margin: 0 2px;
+        padding: 2px 4px;
+        width: 17px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .auPanier {
+        background-color: #64c279;
+    }
     h2.title {
         text-align: center;
+    }
+}
+.places {
+    width: 82%;
+    margin: 5% 9%;  
+    padding: 5px;
+    h3 {
+        margin: 2px;
     }
 }
 /* Form */

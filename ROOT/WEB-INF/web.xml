@@ -8,6 +8,14 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
+    <filter>
+        <filter-name>Panier</filter-name>
+        <filter-class>web.theatre.filters.Panier</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Panier</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <filter-mapping>
         <filter-name>CharsetFilter</filter-name>
         <url-pattern>/*</url-pattern>
@@ -50,6 +58,10 @@
         <servlet-name>Reserver</servlet-name>
         <servlet-class>web.theatre.servlets.Reserver</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Places</servlet-name>
+        <servlet-class>web.theatre.servlets.Places</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Programme</servlet-name>
         <url-pattern>/public/programme</url-pattern>
@@ -83,11 +95,19 @@
         <url-pattern>/admin/representationS</url-pattern>
         <url-pattern>/public/representationS</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Places</servlet-name>
+        <url-pattern>/public/places</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <!--<error-page>
+        <error-code>500</error-code>
+        <location>/common/500.html</location>
+    </error-page>-->
     <!--
     <security-constraint>
         <web-resource-collection>
@@ -109,4 +129,5 @@
         <auth-method>BASIC</auth-method>
     </login-config>
     -->
-</web-app>
+
+    /*</web-app>

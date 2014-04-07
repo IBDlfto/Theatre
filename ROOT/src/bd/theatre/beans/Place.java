@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package bd.theatre.beans;
 
 /**
@@ -11,38 +10,39 @@ package bd.theatre.beans;
  * @author loic
  */
 public class Place {
-    	private int noplace;
-        private int norang;
-        private int numz;
-	
-	public Place (int noplace, int norang,int numz ) {
-		this.noplace = noplace;
-		this.norang = norang;
-                this.numz = numz;
-	}
 
-	public int getNoPlace () {
-		return this.noplace;
-	}
-	
-	public float getNoRang () {
-		return this.norang;
-	}
-        
-        public float getNumZ () {
-		return this.numz;
-	}
-	
-	public void setNoPlace (int noplace) {
-		this.noplace = noplace;
-	}
-	
-	public void setNoRang (int norang) {
-		this.norang = norang;
-	}
-             
-        public void setNumZ (int numz) {
-		this.numz = numz;
-	}
-        
+    private int noPlace;
+    private int noRang;
+    private int numZ;
+
+    public Place(int noplace, int norang, int numz) {
+        this.noPlace = noplace;
+        this.noRang = norang;
+        this.numZ = numz;
+    }
+
+    public int getNoPlace() {
+        return this.noPlace;
+    }
+
+    public int getNoRang() {
+        return this.noRang;
+    }
+
+    public int getNumZ() {
+        return this.numZ;
+    }
+
+    public void setNoPlace(int noplace) {
+        this.noPlace = noplace;
+    }
+
+    public void setNoRang(int norang) {
+        this.noRang = norang;
+    }
+
+    public void setNumZ(int numz) {
+        this.numZ = numz;
+    }
+
 }

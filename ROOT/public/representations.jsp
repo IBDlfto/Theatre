@@ -9,8 +9,9 @@
     <c:choose>
         <c:when test="${representations.size() != 0}">
             <c:forEach items="${representations}" var="representation">
-                <div class="representation" data-date="<c:out value='${representation.date}'/>">
+                <div class="representation" data-date="<c:out value='${representation.dateF}'/>" data-nums="<c:out value='${representation.numS}'/>">
                     <c:out value="${representation.date}"/>
+                    <a href="#" class="placesDispo">Places dispo</a>
                 </div>
             </c:forEach>
         </c:when>
