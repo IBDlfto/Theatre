@@ -1,4 +1,16 @@
 $(function() {
+
+    var panierFinal = [];
+    function refreshCart() {
+        var panier = $.cookie("panier").split("---");
+        panierFinal = [];
+        for (var i = 1; i < panier.length - 1; i++) {
+            panierFinal.push(panier[i].split("//"));
+        }
+        $("#cart").text(panierFinal.length);
+        console.log(panierFinal);
+    }
+
     $(".spectacles .fold img").each(function() {
         var img = $(this);
         var article = img.parent();
@@ -12,42 +24,92 @@ $(function() {
     $over.append($content);
     $(".addCart").on("click", function() {
         var id = $(this).parents("article:first").attr("id");
+        var nom = $(this).parents("article:first").data("nom");
         loading();
-        $.post('representationS', {numS: id, public: 'public'}, function(data, status) {
+        $.post('representationS', {numS: id, nom: nom}, function(data, status) {
             $content.html(data);
         });
     });
     $("body").on("click", ".placesDispo", function() {
         var numS = $(this).parent().data("nums");
         var dateRep = $(this).parent().data("date");
-        console.log(numS + " " + dateRep);
+        var nomS = $(this).parents(".representations:first").data("nom");
+        console.log(numS + " " + nomS + " " + dateRep);
         $(".close").trigger("click");
         loading();
-        $.post('places', {numS: numS, dateRep: dateRep}, function(data) {
+        $.post('places', {numS: numS, dateRep: dateRep, nomS: nomS}, function(data) {
             $content.html(data);
+            for (var i = 0; i < panierFinal.length; i++) {
+                if ($(".places").data("num") == (panierFinal[i])[0]) {
+                    var places = $(".placeLibre");
+                    for (var j = 0; j < places.length; j++) {
+                        if (places[j].dataset.place == (panierFinal[i])[3] &&
+                                places[j].dataset.rang == (panierFinal[i])[4]) {
+                            places[j].setAttribute("class", "auPanier");
+                        }
+                    }
+                }
+            }
         });
     });
     $("body").on("click", ".placeLibre", function() {
         var $this = $(this);
+        var $parent = $(this).parents(".places:first");
         $this.removeClass("placeLibre").addClass("auPanier");
-        $.cookie("panier", $.cookie("panier") + $this.data("place") + "//" + $this.data("rang") + "---");
+        $.cookie("panier", $.cookie("panier")
+                + $parent.data("num") + "//"
+                + $parent.data("nom") + "//"
+                + $parent.data("date") + "//"
+                + $this.data("place") + "//"
+                + $this.data("rang") + "---");
         refreshCart();
     });
     $("body").on("click", ".auPanier", function() {
         var $this = $(this);
+        var $parent = $(this).parents(".places:first");
         $this.removeClass("auPanier").addClass("placeLibre");
+        $.cookie("panier", $.cookie("panier").replace(
+                $parent.data("num") + "//"
+                + $parent.data("nom") + "//"
+                + $parent.data("date") + "//"
+                + $this.data("place") + "//"
+                + $this.data("rang") + "---",
+                ""));
+        refreshCart();
     });
     if ($.cookie("panier") === undefined) {
         $.cookie("panier", "---");
     } else {
-        console.log("ok");
     }
-    console.log($.cookie("panier"));
     refreshCart();
-
-    function refreshCart() {
-        $("#cart").text($.cookie("panier").split("---").length - 2);
-    }
+    var price = [0, 30, 30, 30, 30, 30, 30, 30, 25, 25, 10];
+    $("#cart").on("click", function() {
+        loading();
+        var div = "<div class='representations'>";
+        div += "<h2 class='title'>Contenu du panier</h2>";
+        if (panierFinal.length == 0) {
+            div += "<h2 class='title'>Contenu du panier</h2>";
+        }
+        else {
+            for (var i = 0; i < panierFinal.length; i++) {
+                div += "<div class='representation' data-num='" + (panierFinal[i])[0] + "' "
+                        + "data-date='" + (panierFinal[i])[2] + "' "
+                        + "data-place='" + (panierFinal[i])[3] + "' "
+                        + "data-rang='" + (panierFinal[i])[4] + "'>";
+                div += "<span class='nomspec'> Spectacle: " + (panierFinal[i])[1] + "</span>";
+                div += "<span class='datespec'>" + (panierFinal[i])[2] + "</span>";
+                div += "<span class='placespec'> place: " + (panierFinal[i])[3] + "</span>";
+                div += "<span class='rangspec'> rang: " + (panierFinal[i])[4] + "</span>";
+                div += "<span class='prixspec'> prix: " + price[(panierFinal[i])[4]] + " euros</span>";
+                div += "<span class='remove icone' title='Supprimer du panier'></span>";
+                div += "</div>";
+            }
+            div += "<button class='button sButton bOlive confirm'>Confirmer l'achat</button>";
+        }
+        div += "</div>";
+        console.log(div);
+        $content.html(div);
+    });
 
     function loading() {
         $over.show();

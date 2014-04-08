@@ -35,6 +35,9 @@ public class Places extends HttpServlet {
             throws ServletException, IOException {
         BDPlaces form = new BDPlaces();
         List<Place> places = form.getPlaces(request);
+        request.setAttribute("nom", request.getParameter("nomS"));
+        request.setAttribute("num", request.getParameter("numS"));
+        request.setAttribute("date", request.getParameter("dateRep"));
         request.setAttribute(PLACES, places);
         this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
     }

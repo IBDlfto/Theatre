@@ -9,7 +9,6 @@
     <body>
         <c:import url="../common/header.jsp" />
         <div id="slider">
-            SLIDER A PREVOIR SI LE TEMPS LE PERMET
         </div>
     </div>
     <div class="container_12">
@@ -20,7 +19,7 @@
             <div class="clear"></div>
             <div class="spectacles">
                 <c:forEach var="spectacle" items="${spectacles}">
-                    <article class="grid_3 fold" id="<c:out value="${spectacle.id}"/>">
+                    <article class="grid_3 fold" id="${spectacle.id}" data-nom="<c:out value="${spectacle.nom}"/>" >
                         <img src="../uploads/1367274198351.jpg" />
                         <span class="menu">
                             <span class="info icone"></span>

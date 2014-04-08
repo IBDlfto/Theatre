@@ -4,8 +4,10 @@
     Author     : toure
 --%>
 
-<div class="representations">
-    <h2 class="title">Répresentations du spectacle</h2>
+<div class="representations" data-num="${numS}" data-nom='<c:out value="${nom}" />'>
+    <h2 class="title">
+        Répresentations du spectacle <c:out value="${nom}"/>
+    </h2>
     <c:choose>
         <c:when test="${representations.size() != 0}">
             <c:forEach items="${representations}" var="representation">

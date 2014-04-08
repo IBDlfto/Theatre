@@ -31,7 +31,9 @@ public final static String VUE_PUBLIC = "/public/representations.jsp";
         List<Representation> representations = form.getRepresentation(request);
         request.setAttribute("error", form.error);
         request.setAttribute(REPRESENTATION, representations);
-        if(request.getParameter("public") != null) {
+        if(request.getParameter("nom") != null) {
+            request.setAttribute("nom", request.getParameter("nom"));
+            request.setAttribute("numS", request.getParameter("numS"));
             this.getServletContext().getRequestDispatcher(VUE_PUBLIC).forward(request, response);
         }
         this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
