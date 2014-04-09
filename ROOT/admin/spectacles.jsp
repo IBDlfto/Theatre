@@ -10,7 +10,7 @@
                 <article class="spectacle" id="${spectacle.id}">
                     <div class="grid_3">
                         <div class="prev">
-                            <a href="#"><img src="<c:out value="../uploads/" />"></a>
+                            <a href="#"><img src="<c:out value="../uploads/1367274198351.jpg" />"></a>
                         </div><!-- .prev -->
                     </div>
 

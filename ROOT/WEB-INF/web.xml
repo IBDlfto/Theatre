@@ -100,26 +100,21 @@
         <error-code>500</error-code>
         <location>/common/500.html</location>
     </error-page>-->
-    <!--
+    
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
+            <web-resource-name>
+                Entire Application
+            </web-resource-name>
             <url-pattern>/admin/*</url-pattern>
-            <http-method>GET</http-method>
-            <http-method>POST</http-method>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>admin</role-name>
+            <role-name>administrateur</role-name>
         </auth-constraint>
-
-        <user-data-constraint>
-            <transport-guarantee>NONE</transport-guarantee>
-        </user-data-constraint>
     </security-constraint>
-
+    <!-- Define the Login Configuration for this Application -->
     <login-config>
         <auth-method>BASIC</auth-method>
+        <realm-name>My Club Members-only Area</realm-name>
     </login-config>
-    -->
-
-    /*</web-app>
+</web-app>
