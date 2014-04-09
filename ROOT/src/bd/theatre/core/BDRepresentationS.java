@@ -67,17 +67,25 @@ public class BDRepresentationS {
             PreparedStatement stmt = null;
             ResultSet rs = null;
             Connection conn = BDConnexion.getConnexion();
-
-            requete = "INSERT INTO LesRepresentations values(?, ?)";
+            requete = "SELECT * FROM LesRepresentations WHERE numS = ? AND dateRep = ?";
             stmt = conn.prepareStatement(requete);
             stmt.setInt(1, numS);
             stmt.setTimestamp(2, Timestamp.valueOf(date));
-            if (stmt.executeUpdate() > 0) {
-                String dateret = Fonctions.formatter(new Date(Timestamp.valueOf(date).getTime()));
-                res = "{\"error\": false, \"message\": \"Réprensentation ajoutée avec succès\","
-                        + " \"date\": \"" + dateret + "\"}";
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                res = "{\"error\": true, \"message\": \"Une autre répresentation est déjà prevue pour cette date\"}";
             } else {
-                res = "{\"error\": true, \"message\": \"Une erreur s'est produite lors de l'ajout\"}";
+                requete = "INSERT INTO LesRepresentations values(?, ?)";
+                stmt = conn.prepareStatement(requete);
+                stmt.setInt(1, numS);
+                stmt.setTimestamp(2, Timestamp.valueOf(date));
+                if (stmt.executeUpdate() > 0) {
+                    String dateret = Fonctions.formatter(new Date(Timestamp.valueOf(date).getTime()));
+                    res = "{\"error\": false, \"message\": \"Réprensentation ajoutée avec succès\","
+                            + " \"date\": \"" + dateret + "\"}";
+                } else {
+                    res = "{\"error\": true, \"message\": \"Une erreur s'est produite lors de l'ajout\"}";
+                }
             }
             BDConnexion.FermerTout(conn, stmt, rs);
         } catch (SQLException e) {

@@ -391,7 +391,7 @@ input {outline: none;}
         float: right;
         margin: 10px;
     }
-    .nomspec, .datespec, .placespec, .rangspec, .prixspec {
+    .nomspec, .datespec, .placespec, .rangspec, .prixspec, .subTotal {
         display: inline-block;
     }
     .nomspec {
@@ -408,6 +408,10 @@ input {outline: none;}
     }
     .prixspec {
         width: 100px;
+    }
+    .subTotal {
+        margin-right: 15px;
+        font-size: 20px;
     }
 }
 .places {

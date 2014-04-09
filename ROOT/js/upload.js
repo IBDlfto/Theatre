@@ -61,7 +61,7 @@ $(function() {
             var progress = $(this).find('.progress');
             var xhr = new XMLHttpRequest();
             var form = new FormData(this);
-            xhr.open('POST', 'creation');
+            xhr.open('POST', 'nouveauSpectacle');
             form.append('image', file);
             xhr.send(form);
             xhr.upload.addEventListener('progress', function(e) {
@@ -92,7 +92,7 @@ $(function() {
         form.append('id', $article.attr('id'));
         form.append('picture', image);
         form.append('image', file);
-        xhr.open('POST', 'encheres');
+        xhr.open('POST', 'nouveauSpectacle');
         xhr.send(form);
         xhr.upload.addEventListener('progress', function(e) {
             if (e.lengthComputable) {

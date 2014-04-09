@@ -63,8 +63,5 @@
         </div>
     </body>
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery-ui.min.js"></script>
-    <script src="../js/common.js"></script>
     <script src="../js/admin.js"></script>
-    <script src="../css/Delta/js/jquery-ui.toggleSwitch.js"></script>
 </html>

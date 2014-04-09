@@ -22,29 +22,29 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class BDDossiers {
 
-    public String error;
+    public static String error;
 
-    public boolean addDossiers(HttpServletRequest request)
+    public static int addDossier(int montant)
             throws DossierException, ExceptionConnexion {
-
-        int montant = Integer.parseInt(request.getParameter("montant"));
-
+        int noDossier = 0;
         try {
             String requete;
             PreparedStatement stmt = null;
             ResultSet rs = null;
             Connection conn = BDConnexion.getConnexion();
-            
-            requete = "SELECT MAX(noSerie) noSerie FROM LesTickets";
-            stmt = conn.prepareStatement(requete);
-            rs = stmt.executeQuery();
-            int noDossier = rs.getInt(1) + 1;
 
-            requete = "INSERT INTO LesDossiers ('?','?')";
+            requete = "SELECT MAX(noDossier) noDossier FROM LesDossiers";
             stmt = conn.prepareStatement(requete);
-            stmt.setInt(1, noDossier);
-            stmt.setInt(2, montant);
             rs = stmt.executeQuery();
+            if (rs.next()) {
+                noDossier = rs.getInt(1) + 1;
+                System.out.println(noDossier);
+                requete = "INSERT INTO LesDossiers VALUES(? ,?)";
+                stmt = conn.prepareStatement(requete);
+                stmt.setInt(1, noDossier);
+                stmt.setInt(2, montant);
+                rs = stmt.executeQuery();
+            }
             BDConnexion.FermerTout(conn, stmt, rs);
         } catch (SQLException e) {
             error = e.getMessage();
@@ -55,6 +55,6 @@ public class BDDossiers {
             error = ex.getMessage();
             throw new ExceptionConnexion(ex);
         }
-        return true;
+        return noDossier;
     }
 }

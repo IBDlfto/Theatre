@@ -7,19 +7,14 @@ package bd.theatre.core;
 
 import bd.theatre.beans.Place;
 import bd.theatre.exceptions.ExceptionConnexion;
-import bd.theatre.utils.Fonctions;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 
 /**

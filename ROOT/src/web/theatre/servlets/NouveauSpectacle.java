@@ -5,7 +5,9 @@
  */
 package web.theatre.servlets;
 
+import bd.theatre.core.BDSpectacles;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,5 +31,9 @@ public class NouveauSpectacle extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String chemin = this.getServletContext().getRealPath("/") + "../../ROOT/web/uploads/";
+        BDSpectacles form = new BDSpectacles();
+        PrintWriter out = response.getWriter();
+        out.println(form.addSpectacle(request, chemin));
     }
 }

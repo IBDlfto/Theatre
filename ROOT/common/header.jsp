@@ -14,10 +14,12 @@
 
         <div class="gridUser">
             <nav>
+                <!--
                 <ul>
                     <li><a href="connexion">Connexion</a></li>
                     <li><a href="inscription">Inscription</a></li>
                 </ul>
+                -->
             </nav>
         </div>
     </div>
